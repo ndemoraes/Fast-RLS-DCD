@@ -2,6 +2,7 @@
 This repository contains the implementations of the Fast RLS-DCD adaptive filtering algorithm described in the conference paper "A faster RLS-DCD adaptive filtering algorithm", presented at the 19th International Symposium on Wireless Communications Systems July 14-17, 2024, Rio de Janeiro, Brazil https://iswcs2024.usuarios.rdc.puc-rio.br/
 
 Authors
+
 Naomi J. Sutcliffe de Moraes
 Institute of Mathematics and Statisics, U. of São Paulo, Brazil
 
@@ -18,6 +19,7 @@ Yuriy V. Zakharov
 U. of York, UK
 
 Abstract
+
 The RLS and RLS-DCD algorithms are commonly used for adaptive filtering applications due to their fast convergence even under correlated inputs.  RLS-DCD is a numerically robust and easy to implement version of RLS, but although it requires only BigO(M) arithmetic operations, the total number of operations in a naive implementation is BigO(M^2) due to copy operations when the autocorrelation matrix is updated. The novel data structure and algorithm described in this paper reduce the number of copy operations to BigO(M) and cut the amount of memory needed to about half, speeding up implementations of RLS-DCD significantly for large values of $M$.
 
 In order to capitalize on the special form of the update equation, we store the matrix along its diagonals in what we call the Diagonal Circular-Buffer (DCB) Format. We use a jagged array structure in which each element is a circular buffer representing one diagonal of the original matrix.
